@@ -1,48 +1,45 @@
 # progression-to-csv
-Python script that adds csv export to [progression-app-perl](https://github.com/bartman/progression-app-perl) by bartman.
-
-This is really just a wrapper for his script so all credit goes to him.
+Python script exports .progressionbackup files to csv
 
 ## "Installation"
-1. Go to the link above and clone the repo (or just download "weightxreps.pl")
-2. Clone/download this repo
-3. Put them in the same folder.
-4. Run progression-to-csv.py with python3
+1. Clone/download this repo
+3. Run progression-to-csv.py with python3
 ## Data format.
+There are two standard formats included, but you can specify what attributes you want:
 
-It saves to a single specified file where each row is one set. The headers are:
-1. **Workout_date** - Date of workout in the format "YYYY/MM/DD"
-2. **Workout_time** - Time of the start of the workout in the format "HH:MM:SS"
-3. **Workout_duration** - Duration of workout in hours,
-4. **Workout_name** - Name of the workout or *"<improvised>"* if none is given.
-5. **exercise** - Name of the exercise
+### STANDARD
+
+A csv-file with where each row is a set with the attributes:
+
+2. **startTime** - Time of the start of the workout in the unix time
+4. **name** - Name of the exercise
 6. **weight** - Weight (I think it uses the metric from you phone) - BW if bodyweight.
 7. **reps** - Amount of repetitions if applicable
-8. **time** - Time in seconds of each set if applicable (e.g. planks)
-9. **comment** - Comment given to the set (prefixed by two spaces af of now)
+(TODO: include time for things like plan)
 
+### FULL
+
+A csv-file with where each row is a set with the attributes:
+
+(pending, the list is long)
+(Also, not showing target weights yet)
+### CUSTOM
+Choose exactly what attributes to include
+(not yet implemented)
 ## Uses
-1. save_all - save all workouts to a specified location
+1. standard - save all workouts to a specified location with a subset of attributes
 
 ```bash
-python3 progression-to-csv.py <backup file location> save_all
+python3 progression-to-csv.py <backup file location> -c standard -o <.csv location>
 ```
 
-2. save_workout - save a single workout
+1. full - save all workouts to a specified location with a subset of attributes
 
 ```bash
-python3 progression-to-csv.py <backup file location> save_workout -i <index of workout> 
-```
-
-3. show_all - show a summary of all workouts
-
-
-```bash
-python3 progression-to-csv.py <backup file location> show_all
+python3 progression-to-csv.py <backup file location> -c full -o <.csv location>
 ```
 
 ## TODOS
-1. Expand explanation
+3. Add stuff
 1. List dependencies
 2. Tests
-3. Add stuff

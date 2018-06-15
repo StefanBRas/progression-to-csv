@@ -8,7 +8,7 @@ import csv
 parser = argparse.ArgumentParser()
 parser.add_argument("-b","--backup_file_location")
 parser.add_argument("-c","--command")
-parser.add_argument("-i","--index",type = int, help="index of workout to print")
+parser.add_argument("-o","--output",type = string, help="Location of output")
 args = parser.parse_args()
 backup_file = args.backup_file_location
 
@@ -72,6 +72,8 @@ def show_attributes():
     pass
 if __name__ == "__main__":
     sets = get_sets(args.backup_file_location)
-    export_to_csv(sets,"test.csv",STANDARD)
-    export_to_csv(sets,"test_full.csv")
+    if args.command = "standard":
+        export_to_csv(sets,args.backup_file_location,STANDARD)
+    if args.command = "full"
+        export_to_csv(sets,args.backup_file_location)
         
