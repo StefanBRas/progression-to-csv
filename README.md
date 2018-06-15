@@ -7,6 +7,9 @@ Feel free to use the issue-tracker to request features or report bugs.
 
 I have only tested it on my own data, so it's (very possible) that there are somethings it doesn't handle well.
 
+Requires python >= 3.5. If you're using an sligthy older version you can probably make it run by doing something different in line 51
+
+Only standard libraries.
 ## "Installation"
 1. Clone/download this repo
 2. Run progtocsv.py with python3
