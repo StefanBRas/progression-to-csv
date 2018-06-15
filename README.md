@@ -1,11 +1,19 @@
 # progression-to-csv
-Python script exports training data from .progressionbackup files to csv
+Python script to exports training data from .progressionbackup files created by the Progression app for Android to csv files.
+
+It creates a csv file where each row is one set.
+
+Feel free to use the issue-tracker to request features or report bugs.
+
+I have only tested it on my own data, so it's (very possible) that there are somethings i doesn't handle well.
 
 ## "Installation"
 1. Clone/download this repo
-2. Run progression-to-csv.py with python3
-## Data format.
-There are two standard formats included, but you can specify what attributes you want:
+2. Run progtocsv.py with python3
+
+## Data format
+
+There are two formats included:
 
 ### STANDARD
 
@@ -15,32 +23,32 @@ A csv-file with where each row is a set with the attributes:
 2. **name** - Name of the exercise
 3. **weight** - Weight (I think it uses the metric from you phone) - BW if bodyweight.
 4. **reps** - Amount of repetitions if applicable
-(TODO: include time for things like plan)
+5. **duration* - Duration, if timed set,0 if not (i think)
 
 ### FULL
 
-A csv-file with where each row is a set with the attributes:
+A csv-file with where each row is a set with all attributes from the fil
 
-(pending, the list is long)
-
-(Also, not showing target weights yet)
-### CUSTOM
-Choose exactly what attributes to include
-(not yet implemented)
 ## Uses
 1. standard - save all workouts to a specified location with a subset of attributes
 
 ```bash
-python3 progression-to-csv.py <backup file location> -c standard -o <.csv location>
+python3 progtocsv.py <backup file location> -c standard -o <.csv location>
 ```
 
 2. full - save all workouts to a specified location with a subset of attributes
 
 ```bash
-python3 progression-to-csv.py <backup file location> -c full -o <.csv location>
+python3 progtocsv.py <backup file location> -c full -o <.csv location>
+```
+3. omit -o to print to stdout:
+
+```bash
+python3 progtocsv.py <backup file location> -c full
 ```
 
-## TODOS
-1. Add stuff
-2. List dependencies
-3. Tests
+Omitting the "-c" flag will default til standard.
+
+## Other
+The test doesn't actually test that the output is correct, just that running the main function doesn't throw errors.
+

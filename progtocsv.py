@@ -7,7 +7,7 @@ import csv
 import sys
 
 
-STANDARD = ["startTime","name","weight","reps"]
+STANDARD = ["startTime","name","weight","reps","duration"]
 
 
 def parse_args(args):
