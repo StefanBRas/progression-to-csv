@@ -5,7 +5,7 @@ It creates a csv file where each row is one set.
 
 Feel free to use the issue-tracker to request features or report bugs.
 
-I have only tested it on my own data, so it's (very possible) that there are somethings i doesn't handle well.
+I have only tested it on my own data, so it's (very possible) that there are somethings it doesn't handle well.
 
 ## "Installation"
 1. Clone/download this repo
@@ -17,13 +17,13 @@ There are two formats included:
 
 ### STANDARD
 
-A csv-file with where each row is a set with the attributes:
+A csv-file where each row is a set with the attributes:
 
 1. **startTime** - Time of the start of the workout in the unix time
 2. **name** - Name of the exercise
 3. **weight** - Weight (I think it uses the metric from you phone) - BW if bodyweight.
 4. **reps** - Amount of repetitions if applicable
-5. **duration* - Duration, if timed set,0 if not (i think)
+5. **duration** - Duration, if timed set,0 if not (i think)
 
 ### FULL
 
