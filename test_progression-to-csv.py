@@ -5,14 +5,14 @@ def test_argparse():
     parser = parse_args(["test"])
     assert parser.backup_file == "test"
 def test_full_output_file():
-    parser = parse_args(["test.progressionbackup","-c","full","-o","test.csv"])
+    parser = parse_args(["mini.progressionbackup","-c","full","-o","test.csv"])
     main(parser)
 def test_full_output_stdout():
-    parser = parse_args(["test.progressionbackup","-c","full"])
+    parser = parse_args(["mini.progressionbackup","-c","full"])
     main(parser)
 def test_standard_output_stdout():
-    parser = parse_args(["test.progressionbackup","-c","standard","-o","test.csv"])
+    parser = parse_args(["mini.progressionbackup","-c","standard","-o","test.csv"])
     main(parser)
 def test_standard_output_stdout():
-    parser = parse_args(["test.progressionbackup","-c","standard"])
+    parser = parse_args(["mini.progressionbackup","-c","standard"])
     main(parser)
